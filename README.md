@@ -9,11 +9,11 @@ However, it does not show the date of original tweet but the date of retweeting 
 
 This app add 'originally_created_at' property that shows the date of original tweet.
 
-The target archive file is '(root)/data/tweet.js'. Please enter a valid path to the file.
+The target archive file is '(archive directory)/data/tweet.js'. Please enter a valid path to the file.
 
 ## Usage
 
 ```
 $ npm run build
-$ node dist/main.js
+$ node dist/main.js <your path to tweet.js>
 ```
