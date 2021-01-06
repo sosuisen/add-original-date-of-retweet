@@ -20,28 +20,26 @@ let callback_url = '';
 
 let invalid_arg = true;
 
-const consumer_key_option = process.argv[2];
-const consumer_key_option_array = consumer_key_option.split('=');
-if (consumer_key_option_array.length == 2) {
-  if (consumer_key_option_array[0] === '--consumer-key') {
-    consumer_key = consumer_key_option_array[1];
-    invalid_arg = false;
-  }
-}
-const consumer_key_secret_option = process.argv[3];
-const consumer_key_secret_option_array = consumer_key_secret_option.split('=');
-if (consumer_key_secret_option_array.length == 2) {
-  if (consumer_key_secret_option_array[0] === '--consumer-key-secret') {
-    consumer_key_secret = consumer_key_secret_option_array[1];
-    invalid_arg = false;
-  }
-}
-const callback_url_option = process.argv[4];
-const callback_url_option_array = callback_url_option.split('=');
-if (callback_url_option_array.length == 2) {
-  if (callback_url_option_array[0] === '--callback-url') {
-    callback_url = callback_url_option_array[1];
-    invalid_arg = false;
+for (let i = 2; i < 5; i++) {
+  const arg = process.argv[i];
+  const arg_array = arg.split('=');
+  if (arg_array.length == 2) {
+    switch (arg_array[0]) {
+      case '--consumer-key':
+        consumer_key = arg_array[1];
+        invalid_arg = false;
+        break;
+      case '--consumer-key-secret':
+        consumer_key_secret = arg_array[1];
+        invalid_arg = false;
+        break;
+      case '--callback-url':
+        callback_url = arg_array[1];
+        invalid_arg = false;
+        break;
+      default:
+        break;
+    }
   }
 }
 
