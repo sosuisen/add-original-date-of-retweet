@@ -10,7 +10,7 @@ However, it does not show the date of original tweet but the date of retweeting 
 This app exports the date of the original tweet from your twitter archive.
 
 The target archive file is '(archive directory)/data/tweet.js'. Please enter a valid path to the file.
-This app use Twitter API. You must prepare your <consumer key> <consumer key secret> <callback url> in advance.
+This app use Twitter API. You must prepare your 'consumer key' 'consumer key secret' 'callback url' in advance.
 
 ## Usage
 
